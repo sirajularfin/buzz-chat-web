@@ -1,0 +1,17 @@
+enum Colors {
+  BLACK = '#212121',
+  GREY_100 = '#F5F5F5',
+  GREY_200 = '#EEEEEE',
+  GREY_300 = '#E0E0E0',
+  GREY_400 = '#BDBDBD',
+  GREY_50 = '#FAFAFA',
+  GREY_800 = '#424242',
+  HYPERLINK = '#1A0DAB',
+  GREEN_A700 = '#00C853',
+  PURPLE_A100 = '#B388FF',
+  RED_A400 = '#FF1744',
+  TRANSPARENT = 'TRANSPARENT',
+  WHITE = '#FFFFFF',
+}
+
+export default Colors;
