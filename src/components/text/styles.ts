@@ -2,6 +2,9 @@ import IStyles from '../../interfaces/style.interface';
 import Fonts from '../../themes/fonts';
 
 export enum FontVariant {
+  DisplayLarge = 'DISPLAY_LARGE',
+  DisplayMedium = 'DISPLAY_MEDIUM',
+  DisplaySmall = 'DISPLAY_SMALL',
   BodyLarge = 'BODY_LARGE',
   BodyMedium = 'BODY_MEDIUM',
   BodySmall = 'BODY_SMALL',
@@ -14,6 +17,24 @@ export enum FontVariant {
 }
 
 export const styles: IStyles = {
+  'DISPLAY_LARGE': {
+    fontSize: '57px',
+    fontFamily: Fonts.Montserrat.Regular,
+    lineHeight: '64px',
+    letterSpacing: '-0.25px',
+  },
+  'DISPLAY_MEDIUM': {
+    fontSize: '45px',
+    fontFamily: Fonts.Montserrat.Regular,
+    lineHeight: '52px',
+    letterSpacing: '0px',
+  },
+  'DISPLAY_SMALL': {
+    fontSize: '36px',
+    fontFamily: Fonts.Montserrat.Regular,
+    lineHeight: '44px',
+    letterSpacing: '0px',
+  },
   'BODY_LARGE': {
     fontSize: '16px',
     fontFamily: Fonts.Montserrat.Regular,
@@ -34,25 +55,25 @@ export const styles: IStyles = {
   },
   'HEADING_LARGE': {
     fontSize: '32px',
-    fontFamily: Fonts.Montserrat.Regular,
+    fontFamily: Fonts.Montserrat.SemiBold,
     lineHeight: '40px',
     letterSpacing: '0px',
   },
   'HEADING_MEDIUM': {
     fontSize: '28px',
-    fontFamily: Fonts.Montserrat.Regular,
+    fontFamily: Fonts.Montserrat.SemiBold,
     lineHeight: '36px',
     letterSpacing: '0px',
   },
   'HEADING_SMALL': {
     fontSize: '24px',
-    fontFamily: Fonts.Montserrat.Regular,
+    fontFamily: Fonts.Montserrat.Medium,
     lineHeight: '32px',
     letterSpacing: '0px',
   },
   'LABEL_LARGE': {
     fontSize: '14px',
-    fontFamily: Fonts.Montserrat.SemiBold,
+    fontFamily: Fonts.Montserrat.Medium,
     lineHeight: '20px',
     letterSpacing: '0.1px',
   },
