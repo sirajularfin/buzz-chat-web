@@ -1,5 +1,6 @@
 import React, { CSSProperties, PropsWithChildren } from 'react';
 import Colors from '../../themes/colors';
+import PixelScale from '../../themes/sizes';
 
 type MarginProps = Pick<
   CSSProperties,
@@ -57,6 +58,7 @@ type IProps = MarginProps &
   DimensionProps & {
     debug: boolean;
     backgroundColor: CSSProperties['backgroundColor'];
+    background: CSSProperties['background'];
   };
 
 const Container: React.FC<PropsWithChildren<Partial<IProps>>> = ({
@@ -64,8 +66,8 @@ const Container: React.FC<PropsWithChildren<Partial<IProps>>> = ({
   debug = false,
   ...props
 }) => {
-  const debugStyle = debug
-    ? { borderWidth: '1px', borderColor: Colors.BLACK }
+  const debugStyle: CSSProperties = debug
+    ? { outlineWidth: PixelScale.XS_1, outlineColor: Colors.BLACK }
     : {};
 
   return <div style={{ ...props, ...debugStyle }}>{children}</div>;
