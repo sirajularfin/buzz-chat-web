@@ -1,10 +1,13 @@
 import React from 'react';
+import useResponsive from '../../hooks/useResponsive';
 import styles from './styles';
 
 function Header(): React.ReactElement {
+  const isDesktop = useResponsive();
+  const style = styles(isDesktop);
   return (
-    <header style={styles.container}>
-      <p style={styles.text}>BuzzChat</p>
+    <header style={style.container}>
+      <p style={style.text}>BuzzChat</p>
     </header>
   );
 }
