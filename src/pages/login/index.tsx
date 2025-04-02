@@ -1,6 +1,7 @@
 import { Formik } from 'formik';
 import Button from '../../components/button';
 import Container from '../../components/container';
+import ScreenLayout from '../../components/screen-layout';
 import Text from '../../components/text';
 import { FontVariant } from '../../components/text/styles';
 import TextInput from '../../components/textInput';
@@ -10,19 +11,19 @@ import styles from './styles';
 import useLogin from './useLogin';
 
 function Login(): React.ReactElement {
-  const { loginFormValidation } = useLogin();
+  const { isDesktop, loginFormValidation } = useLogin();
+  const style = styles(isDesktop);
 
   return (
-    <Container height="80%" alignContent="center">
-      <Container marginBottom={PixelScale.XL_50}>
-        <Text
-          color={Colors.WHITE}
-          textAlign="center"
-          variant={FontVariant.HeadingSmall}
-        >
-          Join the conversation
-        </Text>
-      </Container>
+    <ScreenLayout styles={style.container}>
+      <Text
+        color={Colors.WHITE}
+        textAlign="center"
+        variant={FontVariant.HeadingSmall}
+      >
+        Join the conversation
+      </Text>
+      <Container marginBottom={PixelScale.XL_50} />
       <Formik
         initialValues={{ email: '', password: '' }}
         validate={loginFormValidation.validate}
@@ -42,7 +43,7 @@ function Login(): React.ReactElement {
           handleSubmit,
           isSubmitting,
         }) => (
-          <form onSubmit={handleSubmit} style={styles.loginForm}>
+          <form onSubmit={handleSubmit} style={style.loginForm}>
             <TextInput
               type="email"
               name="email"
@@ -51,8 +52,8 @@ function Login(): React.ReactElement {
               onBlur={handleBlur}
               value={values.email}
               variant="ROUNDED"
+              error={errors.email && touched.email ? errors.email : null}
             />
-            {errors.email && touched.email && errors.email}
             <TextInput
               type="password"
               name="password"
@@ -61,12 +62,14 @@ function Login(): React.ReactElement {
               onBlur={handleBlur}
               value={values.password}
               variant="ROUNDED"
+              error={
+                errors.password && touched.password ? errors.password : null
+              }
             />
-            {errors.password && touched.password && errors.password}
             <Container
               display="flex"
               flexDirection="column"
-              marginTop={PixelScale.XL_50}
+              marginTop={PixelScale.S_20}
             >
               <Button disabled={isSubmitting} title="LOG IN" type="submit" />
             </Container>
@@ -93,7 +96,7 @@ function Login(): React.ReactElement {
       >
         Don’t have an account? Create new account
       </Text>
-    </Container>
+    </ScreenLayout>
   );
 }
 
