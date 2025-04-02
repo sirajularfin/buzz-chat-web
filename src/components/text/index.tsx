@@ -1,5 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import Colors from '../../themes/colors';
+import PixelScale from '../../themes/sizes';
 import { FontVariant, styles } from './styles';
 
 interface IProps {
@@ -14,10 +15,8 @@ const Text: React.FC<PropsWithChildren<IProps>> = ({ children, ...props }) => {
   const textStyle: React.CSSProperties = {
     color: props.color,
     textAlign: props.textAlign,
-    display: props.numberOfLines ? '-webkit-box' : 'block',
-    WebkitBoxOrient: 'vertical',
-    WebkitLineClamp: props.numberOfLines,
-    overflow: props.numberOfLines ? 'hidden' : 'visible',
+    margin: PixelScale.ZERO,
+    padding: PixelScale.ZERO,
     ...styles[props.variant],
     ...props.styles,
   };
