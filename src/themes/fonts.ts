@@ -4,6 +4,9 @@ const Fonts = {
     Medium: 'Montserrat-Medium',
     SemiBold: 'Montserrat-SemiBold',
   },
+  Dokdo: {
+    Regular: 'Dokdo-Regular',
+  },
 };
 
 export default Fonts;
