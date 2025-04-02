@@ -4,9 +4,6 @@ import PixelScale from '../../themes/sizes';
 import createStyles from '../../util/styles.util';
 
 const styles = createStyles({
-  container: {
-    width: '100%',
-  },
   placeholderText: {
     color: Colors.BLACK,
     fontSize: '0.875rem',
@@ -15,6 +12,7 @@ const styles = createStyles({
     letterSpacing: '0.00625rem',
   },
   rounded: {
+    borderWidth: 0,
     borderRadius: PixelScale.XXXXL_100,
     padding: '15px 30px',
   },
