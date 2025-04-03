@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 import useResponsive from '../../hooks/useResponsive';
 
 const useRegistration = () => {
   const isDesktop = useResponsive();
+  const navigate = useNavigate();
 
   const validationSchema = () =>
     Yup.object({
@@ -21,6 +23,7 @@ const useRegistration = () => {
 
   return {
     isDesktop,
+    navigate,
     validationSchema,
   };
 };

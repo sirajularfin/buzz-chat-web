@@ -91,24 +91,16 @@ function Login(): React.ReactElement {
       </Text>
       <Container
         display="flex"
-        alignItems="baseline"
         justifyContent="center"
         gap={PixelScale.XS_5}
+        marginTop={PixelScale.XL_50}
       >
-        <Text
-          variant={FontVariant.LabelLarge}
-          color={Colors.GREY_50}
-          textAlign="center"
-          styles={{
-            marginTop: PixelScale.XL_50,
-          }}
-        >
+        <Text variant={FontVariant.LabelLarge} color={Colors.GREY_50}>
           Don’t have an account?
         </Text>
         <Text
           variant={FontVariant.LabelLarge}
           color={Colors.GREY_50}
-          textAlign="center"
           onClick={() => navigate(RoutePath.REGISTER)}
         >
           Create new account

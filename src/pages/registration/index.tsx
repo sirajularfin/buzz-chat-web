@@ -7,13 +7,14 @@ import ScreenLayout from '../../components/screen-layout';
 import Text from '../../components/text';
 import { FontVariant } from '../../components/text/styles';
 import TextInput from '../../components/textInput';
+import { RoutePath } from '../../routes/types';
 import Colors from '../../themes/colors';
 import PixelScale from '../../themes/sizes';
 import styles from './styles';
 import useRegistration from './useRegistration';
 
 function Registration(): React.ReactElement {
-  const { isDesktop, validationSchema } = useRegistration();
+  const { isDesktop, navigate, validationSchema } = useRegistration();
   const style = styles(isDesktop);
 
   return (
@@ -143,16 +144,23 @@ function Registration(): React.ReactElement {
               </form>
             )}
           </Formik>
-          <Text
-            variant={FontVariant.LabelLarge}
-            color={Colors.GREY_50}
-            textAlign="center"
-            styles={{
-              marginTop: PixelScale.M_30,
-            }}
+          <Container
+            display="flex"
+            gap={PixelScale.XS_5}
+            justifyContent="center"
+            marginTop={PixelScale.M_30}
           >
-            Already have an account? Log in
-          </Text>
+            <Text variant={FontVariant.LabelLarge} color={Colors.GREY_50}>
+              Already have an account?
+            </Text>
+            <Text
+              variant={FontVariant.LabelLarge}
+              color={Colors.GREY_50}
+              onClick={() => navigate(RoutePath.ROOT)}
+            >
+              Log in
+            </Text>
+          </Container>
         </Container>
         {isDesktop && (
           <Container flex={1} display="flex" justifyContent="center">
