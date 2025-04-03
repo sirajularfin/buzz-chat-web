@@ -11,6 +11,7 @@ enum Colors {
   PURPLE_300 = '#BA68C8',
   PURPLE_800 = '#6A1B9A',
   PURPLE_A200 = '#E040FB',
+  RED = '#E53935',
   TRANSPARENT = 'TRANSPARENT',
   WHITE = '#FFFFFF',
 }
