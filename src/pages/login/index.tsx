@@ -21,7 +21,7 @@ function Login(): React.ReactElement {
         color={Colors.WHITE}
         textAlign="center"
         variant={
-          isDesktop ? FontVariant.HeadingMedium : FontVariant.HeadingSmall
+          isDesktop ? FontVariant.DisplayLarge : FontVariant.HeadingLarge
         }
       >
         Join the conversation

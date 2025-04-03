@@ -4,9 +4,9 @@ import createStyles from '../../util/styles.util';
 const styles = (isDesktop: boolean) =>
   createStyles({
     container: {
-      width: isDesktop ? '30vw' : '90vw',
+      width: isDesktop ? '70vw' : '90vw',
       minWidth: '320px',
-      maxWidth: '460px',
+      maxWidth: '500px',
       height: '80vh',
       alignContent: 'center',
       alignSelf: 'center',
