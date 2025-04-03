@@ -16,7 +16,6 @@ export enum FontVariant {
   LabelSmall = 'LABEL_SMALL',
 }
 
-// Considering 1rem = 16px
 export const styles = createStyles({
   'DISPLAY_LARGE': {
     fontSize: '3.5625rem', // 57px
@@ -56,19 +55,19 @@ export const styles = createStyles({
   },
   'HEADING_LARGE': {
     fontSize: '2rem', // 32px
-    fontFamily: Fonts.Montserrat.SemiBold,
+    fontFamily: Fonts.Montserrat.Regular,
     lineHeight: '2.5rem', // 40px
     letterSpacing: '0rem', // 0px
   },
   'HEADING_MEDIUM': {
     fontSize: '1.75rem', // 28px
-    fontFamily: Fonts.Montserrat.SemiBold,
+    fontFamily: Fonts.Montserrat.Regular,
     lineHeight: '2.25rem', // 36px
     letterSpacing: '0rem', // 0px
   },
   'HEADING_SMALL': {
     fontSize: '1.5rem', // 24px
-    fontFamily: Fonts.Montserrat.Medium,
+    fontFamily: Fonts.Montserrat.Regular,
     lineHeight: '2rem', // 32px
     letterSpacing: '0rem', // 0px
   },

@@ -9,6 +9,7 @@ interface IProps {
   textAlign?: 'center' | 'left' | 'right';
   variant: FontVariant;
   styles?: React.CSSProperties;
+  onClick?: () => void;
 }
 
 const Text: React.FC<PropsWithChildren<IProps>> = ({ children, ...props }) => {
@@ -21,7 +22,14 @@ const Text: React.FC<PropsWithChildren<IProps>> = ({ children, ...props }) => {
     ...props.styles,
   };
 
-  return <p style={textStyle}>{children}</p>;
+  return (
+    <p
+      style={{ ...textStyle, ...(props.onClick ? { cursor: 'pointer' } : {}) }}
+      onClick={props.onClick}
+    >
+      {children}
+    </p>
+  );
 };
 
 export default Text;
