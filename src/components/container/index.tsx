@@ -1,6 +1,4 @@
 import React, { CSSProperties, PropsWithChildren } from 'react';
-import Colors from '../../themes/colors';
-import PixelScale from '../../themes/sizes';
 
 type MarginProps = Pick<
   CSSProperties,
@@ -29,6 +27,7 @@ type FlexProps = Pick<
   | 'alignItems'
   | 'alignSelf'
   | 'columnGap'
+  | 'display'
   | 'flex'
   | 'flexBasis'
   | 'flexDirection'
@@ -56,21 +55,15 @@ type IProps = MarginProps &
   FlexProps &
   PositionProps &
   DimensionProps & {
-    debug: boolean;
     backgroundColor: CSSProperties['backgroundColor'];
     background: CSSProperties['background'];
   };
 
 const Container: React.FC<PropsWithChildren<Partial<IProps>>> = ({
   children,
-  debug = false,
   ...props
 }) => {
-  const debugStyle: CSSProperties = debug
-    ? { outlineWidth: PixelScale.XS_1, outlineColor: Colors.BLACK }
-    : {};
-
-  return <div style={{ ...props, ...debugStyle }}>{children}</div>;
+  return <div style={{ ...props }}>{children}</div>;
 };
 
 export default Container;
