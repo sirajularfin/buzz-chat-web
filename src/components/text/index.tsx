@@ -22,9 +22,18 @@ const Text: React.FC<PropsWithChildren<IProps>> = ({ children, ...props }) => {
     ...props.styles,
   };
 
+  const underlinedLinkStyle: React.CSSProperties = {
+    cursor: 'pointer',
+    textDecoration: 'underline',
+    textUnderlineOffset: PixelScale.XS_3,
+  };
+
   return (
     <p
-      style={{ ...textStyle, ...(props.onClick ? { cursor: 'pointer' } : {}) }}
+      style={{
+        ...textStyle,
+        ...(props.onClick ? { ...underlinedLinkStyle } : {}),
+      }}
       onClick={props.onClick}
     >
       {children}
