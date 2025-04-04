@@ -1,11 +1,12 @@
 import React from 'react';
+import PixelScale from '../../themes/sizes';
 
 type IProps = Pick<React.ImgHTMLAttributes<HTMLImageElement>, 'src' | 'alt'> & {
-  width?: string | number;
-  height?: string | number;
-  borderRadius?: string | number;
-  borderWidth?: string | number;
   borderColor?: string;
+  borderRadius?: PixelScale;
+  borderWidth?: PixelScale;
+  height?: PixelScale;
+  width?: PixelScale;
 };
 
 const Image: React.FC<IProps> = React.memo(
