@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch, useSelector } from 'react-redux';
-import { appSessionSlice } from './slices/appSession.slice';
-import { authSlice } from './slices/auth.slice';
-import { profileSlice } from './slices/profile.slice';
+import baseApi from 'src/api/baseApi';
+import { appSessionSlice } from 'src/redux/slices/appSession.slice';
+import { authSlice } from 'src/redux/slices/auth.slice';
+import { profileSlice } from 'src/redux/slices/profile.slice';
 
 const store = configureStore({
   reducer: {
+    [baseApi.reducerPath]: baseApi.reducer,
     [appSessionSlice.name]: appSessionSlice.reducer,
     [authSlice.name]: authSlice.reducer,
     [profileSlice.name]: profileSlice.reducer,
