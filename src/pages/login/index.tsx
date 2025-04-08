@@ -12,7 +12,7 @@ import styles from './styles';
 import useLogin from './useLogin';
 
 function Login(): React.ReactElement {
-  const { navigate, isDesktop, validationSchema } = useLogin();
+  const { navigate, isDesktop, validationSchema, onFormSubmit } = useLogin();
   const style = styles(isDesktop);
 
   return (
@@ -28,11 +28,14 @@ function Login(): React.ReactElement {
       </Text>
       <Container marginBottom={PixelScale.XL_50} />
       <Formik
-        initialValues={{ email: '', password: '' }}
-        validate={validationSchema}
+        initialValues={{
+          email: 'test@gmail.com',
+          password: 'testPassword@123',
+        }}
+        validationSchema={validationSchema}
         onSubmit={(values, { setSubmitting }) => {
+          onFormSubmit(values);
           setTimeout(() => {
-            alert(JSON.stringify(values, null, 2));
             setSubmitting(false);
           }, 400);
         }}
